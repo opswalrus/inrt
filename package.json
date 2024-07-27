@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "@expo/spawn-async": "^1.7.2",
-    "@opswalrus/percolate": "^0.4.28",
+    "@opswalrus/percolate": "^0.4.29",
     "axios": "^1.7.2",
     "cheerio": "^1.0.0-rc.12",
     "decompress": "^4.2.1",
