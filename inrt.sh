@@ -122,7 +122,7 @@ install_inrt() {
 	arch="$(get_arch)"
 	install_path="${INRT_INSTALL_PATH:-$HOME/.local/bin/inrt}"
 	install_dir="$(dirname "$install_path")"
-	tarball_url="https://github.com/opswalrus/inrt/releases/download/${version}/inrt-${version}-${os}-${arch}.tar.gz"
+	tarball_url="https://github.com/opswalrus/inrt/releases/download/${version}/inrt-${os}-${arch}.tar.gz"
 
 	cache_file=$(download_file "$tarball_url")
 	debug "inrt-setup: tarball=$cache_file"

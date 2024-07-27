@@ -1,13 +1,15 @@
 import { File } from "@opswalrus/percolate/file";
 import decompress from "decompress";
 import decompressTarGzPlugin from "decompress-targz";
-import { getStreamAsBuffer } from "get-stream";
-import decompressTarPlugin from "decompress-tar";
-import { fileTypeFromBuffer } from "file-type";
-import { isStream } from "is-stream";
 // import decompressTarXzPlugin from "decompress-tarxz";
 import decompressZipPlugin from "decompress-unzip";
 import { match, P } from "ts-pattern";
+
+// these are for the tar.xz decompress functionality
+import decompressTarPlugin from "decompress-tar";
+import { fileTypeFromBuffer } from "file-type";
+import { isStream } from "is-stream";
+import { getStreamAsBuffer } from "get-stream";
 import xzdecompress from "xz-decompress";
 
 export async function unarchive(inputPath: string, outputPath: string): Promise<void> {
