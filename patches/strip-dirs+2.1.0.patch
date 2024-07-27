@@ -1,0 +1,38 @@
+diff --git a/node_modules/strip-dirs/index.js b/node_modules/strip-dirs/index.js
+index 974af89..171e84e 100755
+--- a/node_modules/strip-dirs/index.js
++++ b/node_modules/strip-dirs/index.js
+@@ -7,7 +7,32 @@
+ const path = require('path');
+ const util = require('util');
+ 
+-const isNaturalNumber = require('is-natural-number');
++// const isNaturalNumber = require('is-natural-number');
++function isNaturalNumber(val, option) {
++  if (option) {
++    if (typeof option !== 'object') {
++      throw new TypeError(
++        String(option) +
++        ' is not an object. Expected an object that has boolean `includeZero` property.'
++      );
++    }
++
++    if ('includeZero' in option) {
++      if (typeof option.includeZero !== 'boolean') {
++        throw new TypeError(
++          String(option.includeZero) +
++          ' is neither true nor false. `includeZero` option must be a Boolean value.'
++        );
++      }
++
++      if (option.includeZero && val === 0) {
++        return true;
++      }
++    }
++  }
++
++  return Number.isSafeInteger(val) && val >= 1;
++};
+ 
+ module.exports = function stripDirs(pathStr, count, option) {
+   if (typeof pathStr !== 'string') {
