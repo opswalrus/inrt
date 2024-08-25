@@ -14,11 +14,11 @@
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
     "@swc/cli": "^0.4.0",
-    "@swc/core": "^1.7.3",
+    "@swc/core": "^1.7.18",
     "@types/bun": "latest",
     "patch-package": "^8.0.0",
     "postject": "^1.0.0-alpha.6",
-    "rollup": "^4.19.1"
+    "rollup": "^4.21.0"
   },
   "peerDependencies": {
     "typescript": "^5.5.3"
@@ -26,19 +26,19 @@
   "dependencies": {
     "@expo/spawn-async": "^1.7.2",
     "@opswalrus/percolate": "^0.5.5",
-    "axios": "^1.7.2",
-    "cheerio": "^1.0.0-rc.12",
+    "axios": "^1.7.5",
+    "cheerio": "^1.0.0",
     "decompress": "^4.2.1",
     "decompress-tar": "^4.1.1",
     "decompress-targz": "^4.1.1",
     "decompress-unzip": "^4.0.1",
     "fast-typescript-memoize": "^1.1.1",
-    "file-type": "^19.3.0",
+    "file-type": "^19.4.1",
     "get-stream": "^9.0.1",
-    "human-signals": "^7.0.0",
+    "human-signals": "^8.0.0",
     "is-stream": "^4.0.1",
     "shell-quote": "^1.8.1",
-    "ts-pattern": "^5.2.0",
+    "ts-pattern": "^5.3.1",
     "which": "^4.0.0",
     "xz-decompress": "^0.2.2"
   }
