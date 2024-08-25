@@ -1,5 +1,6 @@
 {
   "name": "inrt",
+  "version": "0.2.0",
   "module": "index.ts",
   "type": "module",
   "scripts": {
@@ -9,7 +10,8 @@
     "build-injectable": "node --experimental-sea-config sea-config.json",
     "build-binary-linux": "cp $(command -v node) build/nirt_linux; postject build/nirt_linux NODE_SEA_BLOB build/sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2",
     "build-binary-macos": "cp $(command -v node) build/nirt_macos; postject build/nirt_macos NODE_SEA_BLOB build/sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2 --macho-segment-name NODE_SEA",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "release": "release-it"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
@@ -26,6 +28,7 @@
   "dependencies": {
     "@expo/spawn-async": "^1.7.2",
     "@opswalrus/percolate": "^0.5.5",
+    "@release-it/bumper": "^6.0.1",
     "axios": "^1.7.5",
     "cheerio": "^1.0.0",
     "decompress": "^4.2.1",
@@ -37,6 +40,7 @@
     "get-stream": "^9.0.1",
     "human-signals": "^8.0.0",
     "is-stream": "^4.0.1",
+    "release-it": "^17.6.0",
     "shell-quote": "^1.8.1",
     "ts-pattern": "^5.3.1",
     "which": "^4.0.0",
