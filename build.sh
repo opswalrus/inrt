@@ -20,12 +20,12 @@ bun install
 # bun build ./index.ts --compile --minify --sourcemap --target=bun-windows-x64-baseline --outfile build/inrt-win-x64-baseline
 
 bun build ./index.ts --compile --minify --target=bun-linux-x64 --outfile build/inrt-linux-x64
-bun build ./index.ts --compile --minify --target=bun-linux-x64-baseline --outfile build/inrt-linux-x64-baseline
+# bun build ./index.ts --compile --minify --target=bun-linux-x64-baseline --outfile build/inrt-linux-x64-baseline
 bun build ./index.ts --compile --minify --target=bun-linux-arm64 --outfile build/inrt-linux-arm64
 bun build ./index.ts --compile --minify --target=bun-darwin-x64 --outfile build/inrt-mac-x64
 bun build ./index.ts --compile --minify --target=bun-darwin-arm64 --outfile build/inrt-mac-arm64
 bun build ./index.ts --compile --minify --target=bun-windows-x64 --outfile build/inrt-win-x64
-bun build ./index.ts --compile --minify --target=bun-windows-x64-baseline --outfile build/inrt-win-x64-baseline
+# bun build ./index.ts --compile --minify --target=bun-windows-x64-baseline --outfile build/inrt-win-x64-baseline
 
 cd build
 for file in *; do zip ${file%.*}.zip $file; done

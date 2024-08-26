@@ -117,12 +117,27 @@ download_file() {
 }
 
 install_inrt() {
-	version="${INRT_VERSION:-v20240727.0}"
 	os="$(get_os)"
 	arch="$(get_arch)"
 	install_path="${INRT_INSTALL_PATH:-$HOME/.local/bin/inrt}"
 	install_dir="$(dirname "$install_path")"
-	zip_url="https://github.com/opswalrus/inrt/releases/download/${version}/inrt-${os}-${arch}.zip"
+
+	# if INRT_VERSION is not set, then we download the latest release
+	if [ -z ${INRT_VERSION:-""} ]; then
+		zip_url="https://github.com/opswalrus/inrt/releases/latest/download/inrt-${os}-${arch}.zip"
+	else
+		version="${INRT_VERSION}"
+		zip_url="https://github.com/opswalrus/inrt/releases/download/${version}/inrt-${os}-${arch}.zip"
+	fi
+
+	# version="${INRT_VERSION}"
+	# os="$(get_os)"
+	# arch="$(get_arch)"
+	# install_path="${INRT_INSTALL_PATH:-$HOME/.local/bin/inrt}"
+	# install_dir="$(dirname "$install_path")"
+	# zip_url="https://github.com/opswalrus/inrt/releases/download/${version}/inrt-${os}-${arch}.zip"
+
+	debug "inrt-setup: zip_url=$zip_url"
 
 	cache_file=$(download_file "$zip_url")
 	debug "inrt-setup: zip=$cache_file"
