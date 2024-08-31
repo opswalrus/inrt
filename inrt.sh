@@ -151,4 +151,13 @@ install_inrt() {
 	info "inrt: installed successfully to $install_path"
 }
 
+install_node() {
+	inrt_install_path="${INRT_INSTALL_PATH:-$HOME/.local/bin/inrt}"
+
+	debug "inrt: running inrt at $install_path"
+
+	$(inrt_install_path)
+}
+
 install_inrt
+install_node

@@ -9,16 +9,29 @@ function osTmpDir() {
   return path.resolve(os.tmpdir());
 }
 
+function osHomeDir() {
+  return path.resolve(os.homedir());
+}
+
+function createInrtDir(): string {
+  const path = File.join(osHomeDir(), ".inrt");
+  fs.mkdirSync(path, { recursive: true });
+  return path;
+}
+
 function createNamedTmpDir(subDirName: string): string {
   const path = File.join(osTmpDir(), subDirName);
   fs.mkdirSync(path, { recursive: true });
   return path;
 }
 
-const tmpDir = createNamedTmpDir(process.argv[2] || "nodejs");
+// const dir = createNamedTmpDir(process.argv[2] || "nodejs");
 // console.log("process.argv", process.argv)
 // console.log("building in", tmpDir);
 
-const nodeRuntime = new NodeRuntime(tmpDir);
+const dir = createInrtDir();
+
+const nodeRuntime = new NodeRuntime(dir);
+
 // nodeRuntime.listPackages();
 await nodeRuntime.installIfNeeded();
