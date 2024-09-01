@@ -3,7 +3,7 @@
 # The following optional environment variables are honored:
 # INRT_DEBUG: boolean
 # INRT_QUIET: boolean
-# INRT_VERSION: string (default "v20240727.0")
+# INRT_VERSION: string (when undefined, installs latest version)
 # INRT_INSTALL_PATH: string (default "$HOME/.local/bin/inrt")
 
 # This script is a derivative of https://github.com/jdx/mise/blob/main/packaging/standalone/install.envsubst
@@ -154,9 +154,9 @@ install_inrt() {
 install_node() {
 	inrt_install_path="${INRT_INSTALL_PATH:-$HOME/.local/bin/inrt}"
 
-	debug "inrt: running inrt at $install_path"
+	debug "inrt: running inrt at $inrt_install_path"
 
-	$(inrt_install_path)
+	eval "$inrt_install_path"
 }
 
 install_inrt
